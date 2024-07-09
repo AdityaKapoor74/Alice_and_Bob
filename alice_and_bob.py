@@ -1,7 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.gridspec import GridSpec
-import cv2
 
 class Alice_and_Bob(object):
     def __init__(self, map_size=(9, 9), n=2):
@@ -236,6 +233,10 @@ class Alice_and_Bob(object):
 
 
     def plot_scene(self, idx):
+        
+        import matplotlib.pyplot as plt
+        from matplotlib.gridspec import GridSpec
+
         fig = plt.figure(figsize=(5, 5))
         gs = GridSpec(3, 2, figure=fig)
         ax1 = fig.add_subplot(gs[0:2, 0:2])
@@ -255,6 +256,7 @@ class Alice_and_Bob(object):
         plt.clf()
 
     def render(self):
+        import cv2
 
         obs = self.get_global_obs()
         enlarge = 30
